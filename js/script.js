@@ -1,7 +1,7 @@
 'use strict';
 
 function titleClickHandler(event){
-    event.preventDefault();
+  event.preventDefault();
   const clickedElement = this;
   console.log('Link was clicked!');
 
@@ -50,14 +50,14 @@ function titleClickHandler(event){
   
 
 const optArticleSelector = '.post',
-optTitleSelector = '.post-title',
-optTitleListSelector = '.titles';
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
 
 function generateTitleLinks() {
 
- /* remove contents of titleList */
- const titleList = document.querySelector(optTitleListSelector);
- titleList.innerHTML='';
+  /* remove contents of titleList */
+  const titleList = document.querySelector(optTitleListSelector);
+  titleList.innerHTML='';
 
   /* for each article */
 
@@ -90,11 +90,11 @@ function generateTitleLinks() {
   titleList.innerHTML = html;
 
   const links = document.querySelectorAll('.titles a');
-console.log(links);
+  console.log(links);
 
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 
 }
   
