@@ -236,16 +236,14 @@ const articleAuthor = article.getAttribute('data-author');
 console.log(articleAuthor);
 
 /* generate html of the link */
-const linkHTML = '<a href="author-' + articleAuthor + '">' + articleAuthor + '</a>';
+const linkHTML = '<a href="#' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
 
 html += linkHTML;
 
 /* insert links into author wrappers */
-authorList.innerHTML = html;
+authorList.innerHTML = 'by ' + html;
 
  }
-
-
 
 }
 
