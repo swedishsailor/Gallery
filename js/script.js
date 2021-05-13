@@ -225,8 +225,7 @@ console.log(authors);
 
  for(let article of articles) {
     /* authors wrapper */
- const authorList = article.querySelectorAll(optAuthorsSelector);
-console.log(authorList);
+ const authorList = article.querySelector(optAuthorsSelector);
 
 let html = '';
 
@@ -236,12 +235,13 @@ const articleAuthor = article.getAttribute('data-author');
 console.log(articleAuthor);
 
 /* generate html of the link */
-const linkHTML = '<a href="#' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+const linkHTML = '<a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
 
 html += linkHTML;
+console.log(authorList);
 
 /* insert links into author wrappers */
-authorList.innerHTML = 'by ' + html;
+authorList.innerHTML =  html;
 
  }
 
