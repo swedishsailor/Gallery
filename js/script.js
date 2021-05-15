@@ -2,7 +2,8 @@
 
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
-  tagCloudLink:Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML)
+  tagCloudLink:Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
+  authorLink:Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
 };
 
 function titleClickHandler(event){
@@ -315,12 +316,16 @@ authorList.innerHTML =  html;
  }
  /* make authors visible on the right */
 
- let allAuthorsHTML = '';
+ const allAuthorsData = {articleAuthor:[]};
  for (let articleAuthor in allAuthors){
-   allAuthorsHTML += '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + ' (' + allAuthors[articleAuthor] + ' articles) ' + '</a></li>';
+  allAuthorsData.authors.push({
+    allAuthorsData:articleAuthor,
+    count: allAuthors[authors],
+    className: calculateTagClass(allAuthors[authors], tagsParams)
+  });
  }
  const authorList = document.querySelector('.authors');
- authorList.innerHTML = allAuthorsHTML;
+ authorList.innerHTML = templates.authorLinks(allAuthorsData);
 
  const links = document.querySelectorAll('.post-authors');
  for (let link of links) {
