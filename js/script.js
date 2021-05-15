@@ -302,7 +302,7 @@ authorList.innerHTML =  html;
 
  let allAuthorsHTML = '';
  for (let articleAuthor in allAuthors){
-   allAuthorsHTML += '<li>' + articleAuthor + ' (' + allAuthors[articleAuthor] + ') ' + '</li>';
+   allAuthorsHTML += '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + ' (' + allAuthors[articleAuthor] + ' articles) ' + '</a></li>';
  }
  const authorList = document.querySelector('.authors');
  authorList.innerHTML = allAuthorsHTML;
